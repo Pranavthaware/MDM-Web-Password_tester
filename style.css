@@ -1,0 +1,66 @@
+/* CipherGuard - Custom Styles
+   Rose / Pink / Fuchsia professional gradient theme
+*/
+
+:root {
+  --rose: #f43f5e;
+  --pink: #ec4899;
+  --fuchsia: #d946ef;
+  --deep-rose: #be123c;
+  --deep-pink: #db2777;
+  --deep-fuchsia: #a21caf;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 12% 12%, rgba(244, 63, 94, 0.28), transparent 28%),
+    radial-gradient(circle at 88% 82%, rgba(217, 70, 239, 0.25), transparent 30%),
+    linear-gradient(135deg, #881337 0%, #db2777 48%, #c026d3 100%);
+  background-attachment: fixed;
+}
+
+/* Main application card */
+main {
+  backdrop-filter: blur(8px);
+}
+
+/* Branding logo */
+header > div:first-child > div:first-child {
+  background: linear-gradient(135deg, var(--rose), var(--pink), var(--fuchsia));
+  box-shadow: 0 10px 25px rgba(219, 39, 119, 0.28);
+}
+
+/* Professional gradient inspector card */
+main > div.bg-gradient-to-br {
+  background: linear-gradient(135deg, var(--deep-rose), var(--deep-pink) 48%, var(--deep-fuchsia));
+  box-shadow: 0 18px 40px rgba(126, 34, 87, 0.25);
+}
+
+/* Generator button */
+#genBtn {
+  background: linear-gradient(90deg, var(--rose), var(--pink), var(--fuchsia));
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
+}
+
+#genBtn:hover {
+  background: linear-gradient(90deg, #e11d48, #db2777, #a21caf);
+}
+
+/* Password fields */
+#password:focus,
+#genOutput:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.14);
+}
+
+/* Smooth interactive feel */
+button,
+input,
+li {
+  transition: all 0.2s ease;
+}
+
+/* Footer */
+footer {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.35);
+}
