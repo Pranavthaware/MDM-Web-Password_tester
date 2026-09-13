@@ -1,0 +1,303 @@
+/* CipherGuard - Custom Styles
+   Rose / Pink / Fuchsia professional gradient theme
+*/
+
+:root {
+  --rose: #f43f5e;
+  --pink: #ec4899;
+  --fuchsia: #d946ef;
+  --deep-rose: #be123c;
+  --deep-pink: #db2777;
+  --deep-fuchsia: #a21caf;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 12% 12%, rgba(244, 63, 94, 0.28), transparent 28%),
+    radial-gradient(circle at 88% 82%, rgba(217, 70, 239, 0.25), transparent 30%),
+    linear-gradient(135deg, #881337 0%, #db2777 48%, #c026d3 100%);
+  background-attachment: fixed;
+}
+
+/* Main application card */
+main {
+  backdrop-filter: blur(8px);
+}
+
+/* Branding logo */
+header > div:first-child > div:first-child {
+  background: linear-gradient(135deg, var(--rose), var(--pink), var(--fuchsia));
+  box-shadow: 0 10px 25px rgba(219, 39, 119, 0.28);
+}
+
+/* Professional gradient inspector card */
+main > div.bg-gradient-to-br {
+  background: linear-gradient(135deg, var(--deep-rose), var(--deep-pink) 48%, var(--deep-fuchsia));
+  box-shadow: 0 18px 40px rgba(126, 34, 87, 0.25);
+}
+
+/* Generator button */
+#genBtn {
+  background: linear-gradient(90deg, var(--rose), var(--pink), var(--fuchsia));
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.25);
+}
+
+#genBtn:hover {
+  background: linear-gradient(90deg, #e11d48, #db2777, #a21caf);
+}
+
+/* Password fields */
+#password:focus,
+#genOutput:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.14);
+}
+
+/* Smooth interactive feel */
+button,
+input,
+li {
+  transition: all 0.2s ease;
+}
+
+/* Footer */
+footer {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   Responsive / Mobile-first usability improvements
+   Keeps the existing CipherGuard visual design while making
+   the layout comfortable from small phones to large screens.
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+/* Prevent long password values and labels from stretching the page. */
+main,
+header,
+main > div,
+main section,
+main article,
+.inspector-card {
+  min-width: 0;
+}
+
+h1,
+h2,
+p,
+span,
+li,
+label {
+  overflow-wrap: anywhere;
+}
+
+/* Touch-friendly controls. */
+button,
+input[type="range"] {
+  touch-action: manipulation;
+}
+
+button {
+  min-height: 40px;
+}
+
+/* Improve text input behavior on mobile keyboards. */
+input[type="text"],
+input[type="password"] {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Tablet and small laptop spacing. */
+@media (max-width: 768px) {
+  body {
+    align-items: stretch;
+  }
+
+  main {
+    max-width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .inspector-card {
+    border-radius: 1.25rem;
+  }
+}
+
+/* Phones. */
+@media (max-width: 640px) {
+  body {
+    padding: 0.75rem !important;
+  }
+
+  main {
+    padding: 1rem !important;
+    border-radius: 1.25rem;
+    gap: 1rem;
+  }
+
+  header {
+    align-items: flex-start !important;
+  }
+
+  header > div:first-child {
+    width: 100%;
+  }
+
+  header > div:last-child {
+    margin-left: 3.25rem;
+  }
+
+  header h1 {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  header h1 > span:last-child {
+    font-size: 9px;
+  }
+
+  header p {
+    max-width: 15rem;
+    line-height: 1.35;
+  }
+
+  .inspector-card {
+    padding: 1rem !important;
+    gap: 1rem;
+  }
+
+  .inspector-card h2 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .inspector-card > div:first-child > div:first-child {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+
+  /* Give the password field enough room for the eye/copy controls. */
+  #password {
+    padding-left: 2.75rem;
+    padding-right: 6.25rem;
+    font-size: 0.875rem;
+  }
+
+  .generator-actions {
+    align-items: stretch;
+  }
+
+  .generator-actions #genOutput {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+    font-size: 0.75rem;
+  }
+
+  .generator-actions #copyGenBtn,
+  .generator-actions #useBtn {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 0;
+  }
+
+  #genBtn {
+    min-height: 40px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Avoid tiny text on phones while preserving the compact look. */
+  .inspector-card p {
+    line-height: 1.45;
+  }
+
+  ul li {
+    min-height: 42px;
+  }
+
+  footer {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    line-height: 1.4;
+  }
+
+  #toast {
+    width: auto;
+    max-width: calc(100vw - 1.5rem);
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Very small phones. */
+@media (max-width: 380px) {
+  body {
+    padding: 0.5rem !important;
+  }
+
+  main {
+    padding: 0.75rem !important;
+    border-radius: 1rem;
+  }
+
+  .inspector-card {
+    padding: 0.75rem !important;
+    border-radius: 1rem;
+  }
+
+  header > div:last-child {
+    margin-left: 0;
+  }
+
+  #password {
+    padding-right: 5.75rem;
+  }
+
+  .inspector-card .grid {
+    gap: 0.5rem;
+  }
+}
+
+/* Landscape phones: use the available horizontal space efficiently. */
+@media (max-height: 520px) and (orientation: landscape) {
+  body {
+    padding: 0.75rem !important;
+  }
+
+  main {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
